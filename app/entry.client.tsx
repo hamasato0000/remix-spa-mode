@@ -1,4 +1,5 @@
 // クライアントサイドのエントリーポイントを定義するファイル
+// クライアントサイドでのアプリケーションの初期化
 
 import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
