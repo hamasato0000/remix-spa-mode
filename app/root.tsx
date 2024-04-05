@@ -9,6 +9,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+// アプリケーション全体の共通レイアウトを定義
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -27,10 +28,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+// アプリケーションのルートコンポーネント
 export default function App() {
   return <Outlet />;
 }
 
+// ハイドレーション中の一時的なフォールバックUIを提供
+// SSR使用時にフォールバックとして表示する
+// clientLoaderが完了するとルートコンポーネントに置き換わる
+// SPAモードではroot.tsx以外で使用することはできない
 export function HydrateFallback() {
   return <p>Loading...</p>;
 }
